@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎄 Рождественский Блог 🎄</title>
-    <!-- Подключаем шрифт Pudelinka -->
+    <title>Новогодний Блог</title>
+    <!-- Подключаем шрифт Pudelinka для колядки -->
     <link href="https://fonts.googleapis.com/css2?family=Pudelinka&display=swap" rel="stylesheet">
     <style>
         body {
-            background: #fff9e6; /* Тёплый светлый фон — как бумага для писем Деду Морозу */
+            background: #fffaf7; /* Тёплый белый фон — как снег под утренним солнцем */
             margin: 0;
             padding: 20px;
-            font-family: 'Pudelinka', cursive;
-            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #2c3e50;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -22,49 +22,53 @@
             max-width: 750px;
             width: 100%;
             background: white;
-            padding: 35px;
+            padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             text-align: center;
             margin-top: 20px;
-            border: 2px solid #ffe0b2; /* Лёгкая рамка — как подарочная коробка */
+            border: 2px solid #f9f9f9;
         }
 
         h1 {
-            font-size: 2.6em;
-            color: #d35400;
+            font-size: 2.4em;
+            color: #c0392b;
             margin-bottom: 15px;
             letter-spacing: 1px;
         }
 
+        /* Поздравление с Новым годом */
         .new-year-message {
-            background: linear-gradient(135deg, #ffeb3b, #ffc107);
+            background: #fff8e1;
             padding: 18px;
-            border-radius: 15px;
+            border-radius: 14px;
             margin: 20px 0;
-            font-size: 1.4em;
-            color: #2c3e50;
-            font-weight: bold;
-            border: 2px solid #ffd54f;
+            font-size: 1.3em;
+            color: #d35400;
+            border: 2px solid #ffecb3;
+            font-weight: 600;
         }
 
+        /* Кнопка для гифки */
         .watch-video-btn {
-            padding: 14px 30px;
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            padding: 12px 28px;
+            background: #e74c3c;
             color: white;
             border: none;
             border-radius: 12px;
-            font-family: 'Pudelinka', cursive;
-            font-size: 1.3em;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 1.2em;
             cursor: pointer;
-            margin: 20px 0;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 25px 0;
+            font-weight: bold;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
         }
 
         .watch-video-btn:hover {
-            background: linear-gradient(135deg, #c0392b, #e74c3c);
+            background: #c0392b;
         }
 
+        /* Гифка */
         .video-container {
             margin: 25px 0;
             display: none;
@@ -73,24 +77,36 @@
 
         .gif-image {
             width: 100%;
-            border-radius: 15px;
+            border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border: 2px solid #ddd;
+            border: 1px solid #eee;
         }
 
+        /* Заголовок КОЛЯДКА */
+        .kolyadka-title {
+            font-family: 'Pudelinka', cursive;
+            font-size: 2.2em;
+            color: #27ae60;
+            margin: 30px 0 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Текст колядки — тоже в Pudelinka */
         .kolyadka {
+            font-family: 'Pudelinka', cursive;
             font-size: 1.8em;
-            color: #d35400;
-            margin: 30px 0;
-            padding: 25px;
-            background: #fff3e0;
-            border-radius: 15px;
+            color: #c0392b;
+            margin: 15px 0 30px;
+            padding: 20px;
+            background: #fffaf0;
+            border-radius: 14px;
             text-transform: uppercase;
             line-height: 1.4;
-            border: 2px solid #ffcc80;
-            font-weight: bold;
+            border: 2px solid #ffe0c0;
         }
 
+        /* Кнопки кроссвордов */
         .crossword-links {
             margin: 30px 0;
         }
@@ -99,17 +115,17 @@
             display: inline-block;
             margin: 0 12px 12px;
             padding: 12px 24px;
-            background: linear-gradient(135deg, #3498db, #2980b9);
+            background: #3498db;
             color: white;
             text-decoration: none;
-            border-radius: 12px;
-            font-family: 'Pudelinka', cursive;
+            border-radius: 10px;
+            font-family: 'Segoe UI', sans-serif;
             font-size: 1.1em;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            font-weight: bold;
         }
 
         .crossword-btn:hover {
-            background: linear-gradient(135deg, #2980b9, #3498db);
+            background: #2980b9;
         }
 
         footer {
@@ -122,19 +138,23 @@
 </head>
 <body>
     <div class="container">
-        <h1>🎄 Рождественский Блог 🎄</h1>
+        <h1>🎄 Новогодний Блог 🎄</h1>
 
         <div class="new-year-message">
             🎉 С Новым 2025 годом! 🎉<br>
-            Пусть он будет добрым, тёплым и волшебным!
+            Пусть он принесёт радость, чудо и тепло!
         </div>
 
         <button class="watch-video-btn" id="showVideoBtn">▶️ СМОТРЕТЬ ВИДЕО (ГИФКА)</button>
 
         <div class="video-container" id="videoContainer">
-            <img src="ScreenRecording_12-14-202521-15-21_1-ezgif.com-video-to-gif-converter.gif" alt="Рождественская гифка" class="gif-image">
+            <img src="ScreenRecording_12-14-202521-15-21_1-ezgif.com-video-to-gif-converter.gif" alt="Новогодняя гифка" class="gif-image">
         </div>
 
+        <!-- Заголовок КОЛЯДКА -->
+        <div class="kolyadka-title">Колядка</div>
+
+        <!-- Текст колядки -->
         <div class="kolyadka">
             Зима в окне — как будто сказка,<br>
             Снег покрыл весь мир до края.<br>
@@ -149,7 +169,7 @@
     </div>
 
     <footer>
-        © 2025 | Создано с любовью для праздника 🎄❤️
+        © 2025 | С новогодним теплом и звоном колокольчиков 🎄
     </footer>
 
     <script>
