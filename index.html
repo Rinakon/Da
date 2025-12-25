@@ -3,114 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Рождественский Блог</title>
+    <title>✨ Рождественский Блог ✨</title>
     <!-- Подключаем шрифт Pudelinka -->
-    <link href="https://fonts.googleapis.com/css2?family=Pudelinka&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pudelinka:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600&display=swap');
+
+        :root {
+            --primary: #e74c3c;
+            --secondary: #3498db;
+            --accent: #f39c12;
+            --light: #fff8e1;
+            --dark: #2c3e50;
+            --snow: #f9f9f9;
+        }
+
         body {
-            background: #f9f9f9;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0c0c3a 0%, #1e1e5a 50%, #0c0c3a 100%);
+            font-family: 'Fredoka', sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            color: #333;
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            animation: fadeIn 1s ease-out;
         }
+
+        /* Анимация появления */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Снежинки */
+        .snowflake {
+            position: absolute;
+            color: white;
+            font-size: 1.5em;
+            opacity: 0.7;
+            z-index: -1;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            from { transform: translateY(-100px) rotate(0deg); }
+            to { transform: translateY(100vh) rotate(360deg); }
+        }
+
         .container {
             max-width: 800px;
             text-align: center;
-            padding: 30px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
+            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            margin: 40px 20px;
+            border: 2px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease;
         }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
         h1 {
-            font-size: 2.5em;
-            color: #2c3e50;
+            font-family: 'Pudelinka', cursive;
+            font-size: 3em;
+            color: #ffeb3b;
+            text-shadow: 0 0 10px #ffeb3b, 0 0 20px #ffeb3b;
             margin-bottom: 20px;
+            letter-spacing: 2px;
+            animation: glow 2s ease-in-out infinite alternate;
         }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #ffeb3b, 0 0 20px #ffeb3b; }
+            to { text-shadow: 0 0 20px #ffeb3b, 0 0 40px #ffeb3b; }
+        }
+
         .video-container {
-            margin: 20px 0;
-            border-radius: 10px;
+            margin: 25px 0;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            box-shadow: 0 0 25px rgba(0,0,0,0.4);
             display: none;
             text-align: center;
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
         }
+
         .gif-image {
             width: 100%;
             height: auto;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            transition: transform 0.3s ease;
         }
+
+        .gif-image:hover {
+            transform: scale(1.03);
+        }
+
         .kolyadka {
             font-family: 'Pudelinka', cursive;
-            font-size: 1.6em;
-            line-height: 1.4;
-            color: #d35400;
-            margin: 30px 0;
-            padding: 20px;
-            background: #fff8e1;
-            border-left: 5px solid #f39c12;
-            border-radius: 8px;
-            text-transform: uppercase; /* КОЛЯДКА БОЛЬШИМИ БУКВАМИ */
+            font-size: 1.8em;
+            line-height: 1.5;
+            color: #ffeb3b;
+            margin: 35px 0;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 8px solid var(--accent);
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 15px rgba(255,255,255,0.1);
+            animation: pulse 3s ease-in-out infinite;
         }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
         .watch-video-btn {
-            padding: 12px 24px;
-            background: #e74c3c;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, var(--primary), #c0392b);
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 50px;
             font-weight: bold;
             cursor: pointer;
-            transition: background 0.3s;
-            font-size: 1.1em;
-            margin: 20px 0;
+            transition: all 0.3s ease;
+            font-size: 1.2em;
+            margin: 25px 0;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.5);
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
         }
+
+        .watch-video-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.7s ease;
+        }
+
+        .watch-video-btn:hover:before {
+            left: 100%;
+        }
+
         .watch-video-btn:hover {
-            background: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.7);
+            background: linear-gradient(135deg, #c0392b, #e74c3c);
         }
+
         .crossword-links {
             display: flex;
             gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
-            margin: 30px 0;
+            margin: 35px 0;
         }
+
         .crossword-btn {
-            padding: 12px 24px;
-            background: #3498db;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, var(--secondary), #2980b9);
             color: white;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 50px;
             font-weight: bold;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
+            font-size: 1.1em;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.5);
+            letter-spacing: 1px;
         }
+
         .crossword-btn:hover {
-            background: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.7);
+            background: linear-gradient(135deg, #2980b9, #3498db);
         }
+
         .new-year-message {
-            font-size: 1.3em;
+            font-family: 'Pudelinka', cursive;
+            font-size: 1.5em;
             font-weight: bold;
-            color: #27ae60;
-            margin: 20px 0;
-            padding: 15px;
-            background: #eafaf1;
-            border-radius: 10px;
+            color: #ffeb3b;
+            margin: 25px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            border: 2px dashed #ffeb3b;
+            box-shadow: 0 0 15px rgba(255,255,255,0.2);
+            animation: bounce 2s ease-in-out infinite;
         }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
         footer {
             margin-top: auto;
             font-size: 0.9em;
-            color: #7f8c8d;
+            color: #bdc3c7;
             text-align: center;
+            padding: 20px;
+            opacity: 0.8;
         }
+
+        /* Анимированный фон */
+        .sparkle {
+            position: absolute;
+            color: #ffffff;
+            font-size: 1.2em;
+            opacity: 0.6;
+            z-index: -1;
+            animation: sparkle 3s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 0.8; transform: scale(1.2); }
+            100% { opacity: 0.3; transform: scale(0.8); }
+        }
+
     </style>
 </head>
 <body>
+
+    <!-- Снежинки (генерируются JS) -->
+    <script>
+        for (let i = 0; i < 30; i++) {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄';
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = (Math.random() * 5 + 5) + 's';
+            snowflake.style.animationDelay = Math.random() * 5 + 's';
+            document.body.appendChild(snowflake);
+        }
+
+        // Мерцающие звёзды/искры
+        for (let i = 0; i < 15; i++) {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.textContent = '✨';
+            sparkle.style.left = Math.random() * 100 + 'vw';
+            sparkle.style.top = Math.random() * 100 + 'vh';
+            sparkle.style.animationDelay = Math.random() * 5 + 's';
+            document.body.appendChild(sparkle);
+        }
+    </script>
+
     <div class="container">
-        <h1>🎄 Рождественский Блог 🎄</h1>
+        <h1>🎄✨ РОЖДЕСТВЕНСКИЙ БЛОГ ✨🎄</h1>
 
         <!-- Поздравление с Новым годом -->
         <div class="new-year-message">
@@ -142,7 +303,7 @@
     </div>
 
     <footer>
-        © 2025 | Создано с любовью для праздника
+        © 2025 | Создано с любовью для праздника 🎄❤️
     </footer>
 
     <!-- JavaScript для показа гифки -->
@@ -153,5 +314,6 @@
             this.style.display = 'none';
         });
     </script>
+
 </body>
 </html>
