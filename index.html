@@ -3,116 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Рождественский Блог</title>
-    <!-- Подключаем шрифт Pudelinka -->
-    <link href="https://fonts.googleapis.com/css2?family=Pudelinka&display=swap" rel="stylesheet">
+    <title>Новогодний Блог</title>
+    <!-- Подключаем красивый и читаемый шрифт для колядки -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background: #f9f9f9;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f9e8e8 0%, #e6c2c2 100%); /* Нежно-бордовый градиент */
             margin: 0;
             padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #2c3e50;
             display: flex;
             flex-direction: column;
             align-items: center;
-            color: #333;
+            min-height: 100vh;
         }
+
         .container {
-            max-width: 800px;
-            text-align: center;
-            padding: 30px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-        }
-        h1 {
-            font-size: 2.5em;
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-        .video-container {
-            margin: 20px 0;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-            display: none;
-        }
-        video {
+            max-width: 780px;
             width: 100%;
-            height: auto;
-            display: block;
+            background: white;
+            padding: 40px 30px;
+            border-radius: 24px;
+            box-shadow: 0 8px 30px rgba(128, 0, 32, 0.25);
+            text-align: center;
+            margin-top: 20px;
+            border: 4px solid #e6b3b3;
+            position: relative;
+            overflow: hidden;
         }
-        .kolyadka {
-            font-family: 'Pudelinka', cursive;
-            font-size: 1.6em;
-            line-height: 1.4;
-            color: #d35400;
-            margin: 30px 0;
+
+        .container::before {
+            content: "❄️🎄❄️🎄❄️";
+            position: absolute;
+            top: 10px;
+            left: 0;
+            width: 100%;
+            font-size: 1.2em;
+            color: #8b0000;
+            letter-spacing: 12px;
+            opacity: 0.85;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            color: #8b0000;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(139, 0, 0, 0.15);
+            letter-spacing: 1.5px;
+        }
+
+        .new-year-message {
+            background: #fff0f0;
             padding: 20px;
-            background: #fff8e1;
-            border-left: 5px solid #f39c12;
-            border-radius: 8px;
+            border-radius: 16px;
+            margin: 25px 0;
+            font-size: 1.4em;
+            color: #a93226;
+            border: 3px dashed #d4a5a5;
+            font-weight: 700;
+            box-shadow: inset 0 0 10px rgba(169, 50, 38, 0.2);
         }
+
         .watch-video-btn {
-            padding: 12px 24px;
-            background: #e74c3c;
+            padding: 14px 32px;
+            background: linear-gradient(to right, #8b0000, #a93226);
             color: white;
             border: none;
-            border-radius: 8px;
-            font-weight: bold;
+            border-radius: 50px;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 1.3em;
             cursor: pointer;
-            transition: background 0.3s;
-            font-size: 1.1em;
-            margin: 20px 0;
+            margin: 25px 0;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
+
         .watch-video-btn:hover {
-            background: #c0392b;
+            transform: scale(1.05);
+            box-shadow: 0 7px 20px rgba(139, 0, 0, 0.4);
         }
+
+        .video-container {
+            margin: 25px 0;
+            display: none;
+            text-align: center;
+        }
+
+        .gif-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+            border: 3px solid #f2e6e6;
+        }
+
+        /* Новый шрифт для колядки — красивый и читаемый */
+        .kolyadka-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3em;
+            font-weight: 700;
+            color: #8b0000;
+            margin: 35px 0 20px;
+            letter-spacing: 1.5px;
+            text-shadow: 1px 1px 2px rgba(139, 0, 0, 0.1);
+        }
+
+        .kolyadka {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.3em; /* Чётко читаемый размер */
+            font-weight: 600;
+            color: #a93226;
+            margin: 20px 0 35px;
+            padding: 24px;
+            background: #fdf3f3;
+            border-radius: 18px;
+            line-height: 1.5;
+            border: 3px solid #e8c4c4;
+            box-shadow: inset 0 0 8px rgba(232, 196, 196, 0.5);
+            /* Убран text-transform: uppercase — Dancing Script лучше смотрится в обычном регистре */
+        }
+
         .crossword-links {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 30px 0;
+            margin: 35px 0;
         }
+
         .crossword-btn {
-            padding: 12px 24px;
-            background: #3498db;
+            display: inline-block;
+            margin: 0 14px 14px;
+            padding: 14px 28px;
+            background: linear-gradient(to bottom, #8b0000, #a93226);
             color: white;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 50px;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 1.2em;
             font-weight: bold;
-            transition: background 0.3s;
+            box-shadow: 0 4px 10px rgba(139, 0, 0, 0.25);
+            transition: background 0.3s, transform 0.2s;
         }
+
         .crossword-btn:hover {
-            background: #2980b9;
+            background: linear-gradient(to bottom, #7a0000, #8b0000);
+            transform: translateY(-2px);
         }
+
         footer {
-            margin-top: auto;
-            font-size: 0.9em;
-            color: #7f8c8d;
+            margin-top: 30px;
+            color: #8b0000;
+            font-size: 1em;
             text-align: center;
+            font-weight: 600;
+            text-shadow: 1px 1px 1px rgba(255,255,255,0.7);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🎄 Рождественский Блог 🎄</h1>
+        <h1>🎄 Новогодний Блог 🎄</h1>
 
-        <!-- Кнопка для показа видео -->
-        <button class="watch-video-btn" id="showVideoBtn">▶️ СМОТРЕТЬ ВИДЕО</button>
-
-        <!-- Видео (скрыто по умолчанию) -->
-        <div class="video-container" id="videoContainer">
-            <video controls width="100%">
-                <source src="snowflakes.mp4" type="video/mp4">
-                ❌ Видео не поддерживается. 
-                <a href="snowflakes.mp4" download>Скачать видео</a>.
-            </video>
+        <div class="new-year-message">
+            🎉 С Новым 2025 годом! 🎉<br>
+            Пусть он принесёт радость, чудо и тепло!
         </div>
 
-        <!-- Колядка из 4 строк -->
+        <button class="watch-video-btn" id="showVideoBtn">▶️ СМОТРЕТЬ ВИДЕО (ГИФКА)</button>
+
+        <div class="video-container" id="videoContainer">
+            <img src="ScreenRecording_12-14-202521-15-21_1-ezgif.com-video-to-gif-converter.gif" alt="Новогодняя гифка" class="gif-image">
+        </div>
+
+        <div class="kolyadka-title">Колядка</div>
+
         <div class="kolyadka">
             Зима в окне — как будто сказка,<br>
             Снег покрыл весь мир до края.<br>
@@ -120,7 +183,6 @@
             Праздник Рождества — вот он, наш!
         </div>
 
-        <!-- Ссылки на кроссворды -->
         <div class="crossword-links">
             <a href="krossvordRU.html" class="crossword-btn">Русский кроссворд</a>
             <a href="krossvordEN.html" class="crossword-btn">Английский кроссворд</a>
@@ -128,17 +190,13 @@
     </div>
 
     <footer>
-        © 2025 | Создано с любовью для праздника
+        © 2025 | С новогодним теплом и звоном колокольчиков 🎄
     </footer>
 
-    <!-- JavaScript для показа видео -->
     <script>
         document.getElementById('showVideoBtn').addEventListener('click', function() {
-            const container = document.getElementById('videoContainer');
-            container.style.display = 'block';
+            document.getElementById('videoContainer').style.display = 'block';
             this.style.display = 'none';
-            const video = container.querySelector('video');
-            video.play().catch(e => console.log("Авто-воспроизведение заблокировано:", e));
         });
     </script>
 </body>
