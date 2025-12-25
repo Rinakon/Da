@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Новогодний Блог</title>
-    <!-- Подключаем шрифт Pudelinka -->
-    <link href="https://fonts.googleapis.com/css2?family=Pudelinka&display=swap" rel="stylesheet">
+    <!-- Подключаем красивый и читаемый шрифт для колядки -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
     <style>
         body {
             background: linear-gradient(135deg, #f9e8e8 0%, #e6c2c2 100%); /* Нежно-бордовый градиент */
@@ -25,7 +25,7 @@
             background: white;
             padding: 40px 30px;
             border-radius: 24px;
-            box-shadow: 0 8px 30px rgba(128, 0, 32, 0.25); /* Бордовая тень */
+            box-shadow: 0 8px 30px rgba(128, 0, 32, 0.25);
             text-align: center;
             margin-top: 20px;
             border: 4px solid #e6b3b3;
@@ -33,7 +33,6 @@
             overflow: hidden;
         }
 
-        /* Новогодние акценты — теперь в бордовом стиле */
         .container::before {
             content: "❄️🎄❄️🎄❄️";
             position: absolute;
@@ -41,14 +40,14 @@
             left: 0;
             width: 100%;
             font-size: 1.2em;
-            color: #8b0000; /* Тёмно-бордовый */
+            color: #8b0000;
             letter-spacing: 12px;
             opacity: 0.85;
         }
 
         h1 {
             font-size: 2.8em;
-            color: #8b0000; /* Классический бордовый */
+            color: #8b0000;
             margin-bottom: 15px;
             text-shadow: 2px 2px 4px rgba(139, 0, 0, 0.15);
             letter-spacing: 1.5px;
@@ -60,7 +59,7 @@
             border-radius: 16px;
             margin: 25px 0;
             font-size: 1.4em;
-            color: #a93226; /* Насыщенный бордово-красный */
+            color: #a93226;
             border: 3px dashed #d4a5a5;
             font-weight: 700;
             box-shadow: inset 0 0 10px rgba(169, 50, 38, 0.2);
@@ -68,7 +67,7 @@
 
         .watch-video-btn {
             padding: 14px 32px;
-            background: linear-gradient(to right, #8b0000, #a93226); /* Бордовый градиент */
+            background: linear-gradient(to right, #8b0000, #a93226);
             color: white;
             border: none;
             border-radius: 50px;
@@ -100,28 +99,30 @@
             border: 3px solid #f2e6e6;
         }
 
+        /* Новый шрифт для колядки — красивый и читаемый */
         .kolyadka-title {
-            font-family: 'Pudelinka', cursive;
-            font-size: 2.8em;
+            font-family: 'Dancing Script', cursive;
+            font-size: 3em;
+            font-weight: 700;
             color: #8b0000;
             margin: 35px 0 20px;
-            text-transform: uppercase;
-            letter-spacing: 2.5px;
+            letter-spacing: 1.5px;
             text-shadow: 1px 1px 2px rgba(139, 0, 0, 0.1);
         }
 
         .kolyadka {
-            font-family: 'Pudelinka', cursive;
-            font-size: 2.1em;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.3em; /* Чётко читаемый размер */
+            font-weight: 600;
             color: #a93226;
             margin: 20px 0 35px;
             padding: 24px;
             background: #fdf3f3;
             border-radius: 18px;
-            text-transform: uppercase;
-            line-height: 1.45;
+            line-height: 1.5;
             border: 3px solid #e8c4c4;
             box-shadow: inset 0 0 8px rgba(232, 196, 196, 0.5);
+            /* Убран text-transform: uppercase — Dancing Script лучше смотрится в обычном регистре */
         }
 
         .crossword-links {
