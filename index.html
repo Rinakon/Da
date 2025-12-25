@@ -3,299 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>✨ Рождественский Блог ✨</title>
+    <title>Рождественский Блог</title>
     <!-- Подключаем шрифт Pudelinka -->
-    <link href="https://fonts.googleapis.com/css2?family=Pudelinka:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pudelinka&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600&display=swap');
-
-        :root {
-            --primary: #e74c3c;
-            --secondary: #3498db;
-            --accent: #f39c12;
-            --light: #fff8e1;
-            --dark: #2c3e50;
-            --snow: #f9f9f9;
-        }
-
         body {
-            background: linear-gradient(135deg, #0c0c3a 0%, #1e1e5a 50%, #0c0c3a 100%);
-            font-family: 'Fredoka', sans-serif;
+            background: #fffaf0; /* Очень светлый бежевый — уютно */
             margin: 0;
-            padding: 0;
+            padding: 20px;
+            font-family: 'Pudelinka', cursive;
+            color: #2c3e50;
             display: flex;
             flex-direction: column;
             align-items: center;
-            color: white;
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-            animation: fadeIn 1s ease-out;
-        }
-
-        /* Анимация появления */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Снежинки */
-        .snowflake {
-            position: absolute;
-            color: white;
-            font-size: 1.5em;
-            opacity: 0.7;
-            z-index: -1;
-            pointer-events: none;
-            animation: fall linear infinite;
-        }
-
-        @keyframes fall {
-            from { transform: translateY(-100px) rotate(0deg); }
-            to { transform: translateY(100vh) rotate(360deg); }
+            line-height: 1.5;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 700px;
+            width: 100%;
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             text-align: center;
-            padding: 40px 30px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-            margin: 40px 20px;
-            border: 2px solid rgba(255,255,255,0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .container:hover {
-            transform: scale(1.02);
+            margin-top: 20px;
         }
 
         h1 {
-            font-family: 'Pudelinka', cursive;
-            font-size: 3em;
-            color: #ffeb3b;
-            text-shadow: 0 0 10px #ffeb3b, 0 0 20px #ffeb3b;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
-            animation: glow 2s ease-in-out infinite alternate;
+            font-size: 2.4em;
+            color: #d35400;
+            margin-bottom: 15px;
         }
 
-        @keyframes glow {
-            from { text-shadow: 0 0 10px #ffeb3b, 0 0 20px #ffeb3b; }
-            to { text-shadow: 0 0 20px #ffeb3b, 0 0 40px #ffeb3b; }
+        .new-year-message {
+            background: #e8f4f8;
+            padding: 16px;
+            border-radius: 12px;
+            margin: 20px 0;
+            font-size: 1.4em;
+            color: #27ae60;
+            border: 2px solid #b7e1ea;
+        }
+
+        .watch-video-btn {
+            padding: 12px 28px;
+            background: #e67e22;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Pudelinka', cursive;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin: 20px 0;
+            transition: background 0.2s;
+        }
+
+        .watch-video-btn:hover {
+            background: #d35400;
         }
 
         .video-container {
-            margin: 25px 0;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 0 25px rgba(0,0,0,0.4);
+            margin: 20px 0;
             display: none;
             text-align: center;
-            background: rgba(0,0,0,0.3);
-            padding: 15px;
-            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .gif-image {
             width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-            transition: transform 0.3s ease;
-        }
-
-        .gif-image:hover {
-            transform: scale(1.03);
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         .kolyadka {
-            font-family: 'Pudelinka', cursive;
             font-size: 1.8em;
-            line-height: 1.5;
-            color: #ffeb3b;
-            margin: 35px 0;
-            padding: 25px;
-            background: rgba(255, 255, 255, 0.1);
-            border-left: 8px solid var(--accent);
+            color: #c0392b;
+            margin: 30px 0;
+            padding: 20px;
+            background: #fdf2e9;
             border-radius: 12px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 0 15px rgba(255,255,255,0.1);
-            animation: pulse 3s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
-        }
-
-        .watch-video-btn {
-            padding: 14px 28px;
-            background: linear-gradient(135deg, var(--primary), #c0392b);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 1.2em;
-            margin: 25px 0;
-            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.5);
-            letter-spacing: 1px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .watch-video-btn:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.7s ease;
-        }
-
-        .watch-video-btn:hover:before {
-            left: 100%;
-        }
-
-        .watch-video-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.7);
-            background: linear-gradient(135deg, #c0392b, #e74c3c);
+            line-height: 1.4;
+            border: 1px solid #fadbd8;
         }
 
         .crossword-links {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 35px 0;
+            margin: 30px 0;
         }
 
         .crossword-btn {
-            padding: 14px 28px;
-            background: linear-gradient(135deg, var(--secondary), #2980b9);
+            display: inline-block;
+            margin: 0 10px 10px;
+            padding: 12px 24px;
+            background: #3498db;
             color: white;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s ease;
+            border-radius: 10px;
+            font-family: 'Pudelinka', cursive;
             font-size: 1.1em;
-            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.5);
-            letter-spacing: 1px;
+            transition: background 0.2s;
         }
 
         .crossword-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.7);
-            background: linear-gradient(135deg, #2980b9, #3498db);
-        }
-
-        .new-year-message {
-            font-family: 'Pudelinka', cursive;
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #ffeb3b;
-            margin: 25px 0;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            border: 2px dashed #ffeb3b;
-            box-shadow: 0 0 15px rgba(255,255,255,0.2);
-            animation: bounce 2s ease-in-out infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            background: #2980b9;
         }
 
         footer {
-            margin-top: auto;
-            font-size: 0.9em;
-            color: #bdc3c7;
-            text-align: center;
-            padding: 20px;
-            opacity: 0.8;
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-size: 0.95em;
         }
-
-        /* Анимированный фон */
-        .sparkle {
-            position: absolute;
-            color: #ffffff;
-            font-size: 1.2em;
-            opacity: 0.6;
-            z-index: -1;
-            animation: sparkle 3s ease-in-out infinite;
-        }
-
-        @keyframes sparkle {
-            0% { opacity: 0.3; transform: scale(0.8); }
-            50% { opacity: 0.8; transform: scale(1.2); }
-            100% { opacity: 0.3; transform: scale(0.8); }
-        }
-
     </style>
 </head>
 <body>
-
-    <!-- Снежинки (генерируются JS) -->
-    <script>
-        for (let i = 0; i < 30; i++) {
-            const snowflake = document.createElement('div');
-            snowflake.classList.add('snowflake');
-            snowflake.textContent = '❄';
-            snowflake.style.left = Math.random() * 100 + 'vw';
-            snowflake.style.animationDuration = (Math.random() * 5 + 5) + 's';
-            snowflake.style.animationDelay = Math.random() * 5 + 's';
-            document.body.appendChild(snowflake);
-        }
-
-        // Мерцающие звёзды/искры
-        for (let i = 0; i < 15; i++) {
-            const sparkle = document.createElement('div');
-            sparkle.classList.add('sparkle');
-            sparkle.textContent = '✨';
-            sparkle.style.left = Math.random() * 100 + 'vw';
-            sparkle.style.top = Math.random() * 100 + 'vh';
-            sparkle.style.animationDelay = Math.random() * 5 + 's';
-            document.body.appendChild(sparkle);
-        }
-    </script>
-
     <div class="container">
-        <h1>🎄✨ РОЖДЕСТВЕНСКИЙ БЛОГ ✨🎄</h1>
+        <h1>🎄 Рождественский Блог 🎄</h1>
 
-        <!-- Поздравление с Новым годом -->
         <div class="new-year-message">
             🎉 С Новым 2025 годом! 🎉<br>
-            Пусть он будет ярким, тёплым и полным чудес!
+            Пусть он будет добрым, тёплым и волшебным!
         </div>
 
-        <!-- Кнопка для показа GIF -->
         <button class="watch-video-btn" id="showVideoBtn">▶️ СМОТРЕТЬ ВИДЕО (ГИФКА)</button>
 
-        <!-- Гифка (скрыта по умолчанию) -->
         <div class="video-container" id="videoContainer">
-            <img src="ScreenRecording_12-14-202521-15-21_1-ezgif.com-video-to-gif-converter.gif" alt="Рождественская ёлка" class="gif-image">
+            <img src="ScreenRecording_12-14-202521-15-21_1-ezgif.com-video-to-gif-converter.gif" alt="Рождественская гифка" class="gif-image">
         </div>
 
-        <!-- КОЛЯДКА БОЛЬШИМИ БУКВАМИ на языке "Пуделинка" -->
         <div class="kolyadka">
-            ЗИМА В ОКНЕ — КАК БУДТО СКАЗКА,<br>
-            СНЕГ ПОКРЫЛ ВЕСЬ МИР ДО КРАЯ.<br>
-            ЗВЕНЯТ КОЛОКОЛЬЧИКИ, ЗОВУТ НАС,<br>
-            ПРАЗДНИК РОЖДЕСТВА — ВОТ ОН, НАШ!
+            Зима в окне — как будто сказка,<br>
+            Снег покрыл весь мир до края.<br>
+            Звенят колокольчики, зовут нас,<br>
+            Праздник Рождества — вот он, наш!
         </div>
 
-        <!-- Ссылки на кроссворды -->
         <div class="crossword-links">
             <a href="krossvordRU.html" class="crossword-btn">Русский кроссворд</a>
             <a href="krossvordEN.html" class="crossword-btn">Английский кроссворд</a>
@@ -303,17 +144,14 @@
     </div>
 
     <footer>
-        © 2025 | Создано с любовью для праздника 🎄❤️
+        © 2025 | Создано с любовью для праздника 🎄
     </footer>
 
-    <!-- JavaScript для показа гифки -->
     <script>
         document.getElementById('showVideoBtn').addEventListener('click', function() {
-            const container = document.getElementById('videoContainer');
-            container.style.display = 'block';
+            document.getElementById('videoContainer').style.display = 'block';
             this.style.display = 'none';
         });
     </script>
-
 </body>
 </html>
