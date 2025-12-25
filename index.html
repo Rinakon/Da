@@ -3,88 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Рождественский Блог</title>
+    <title>🎄 Рождественский Блог 🎄</title>
     <!-- Подключаем шрифт Pudelinka -->
     <link href="https://fonts.googleapis.com/css2?family=Pudelinka&display=swap" rel="stylesheet">
     <style>
         body {
-            background: #fffaf0; /* Очень светлый бежевый — уютно */
+            background: #fff9e6; /* Тёплый светлый фон — как бумага для писем Деду Морозу */
             margin: 0;
             padding: 20px;
             font-family: 'Pudelinka', cursive;
-            color: #2c3e50;
+            color: #333;
             display: flex;
             flex-direction: column;
             align-items: center;
-            line-height: 1.5;
         }
 
         .container {
-            max-width: 700px;
+            max-width: 750px;
             width: 100%;
             background: white;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             text-align: center;
             margin-top: 20px;
+            border: 2px solid #ffe0b2; /* Лёгкая рамка — как подарочная коробка */
         }
 
         h1 {
-            font-size: 2.4em;
+            font-size: 2.6em;
             color: #d35400;
             margin-bottom: 15px;
+            letter-spacing: 1px;
         }
 
         .new-year-message {
-            background: #e8f4f8;
-            padding: 16px;
-            border-radius: 12px;
+            background: linear-gradient(135deg, #ffeb3b, #ffc107);
+            padding: 18px;
+            border-radius: 15px;
             margin: 20px 0;
             font-size: 1.4em;
-            color: #27ae60;
-            border: 2px solid #b7e1ea;
+            color: #2c3e50;
+            font-weight: bold;
+            border: 2px solid #ffd54f;
         }
 
         .watch-video-btn {
-            padding: 12px 28px;
-            background: #e67e22;
+            padding: 14px 30px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
             color: white;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             font-family: 'Pudelinka', cursive;
-            font-size: 1.2em;
+            font-size: 1.3em;
             cursor: pointer;
             margin: 20px 0;
-            transition: background 0.2s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .watch-video-btn:hover {
-            background: #d35400;
+            background: linear-gradient(135deg, #c0392b, #e74c3c);
         }
 
         .video-container {
-            margin: 20px 0;
+            margin: 25px 0;
             display: none;
             text-align: center;
         }
 
         .gif-image {
             width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: 2px solid #ddd;
         }
 
         .kolyadka {
             font-size: 1.8em;
-            color: #c0392b;
+            color: #d35400;
             margin: 30px 0;
-            padding: 20px;
-            background: #fdf2e9;
-            border-radius: 12px;
+            padding: 25px;
+            background: #fff3e0;
+            border-radius: 15px;
             text-transform: uppercase;
             line-height: 1.4;
-            border: 1px solid #fadbd8;
+            border: 2px solid #ffcc80;
+            font-weight: bold;
         }
 
         .crossword-links {
@@ -93,25 +97,26 @@
 
         .crossword-btn {
             display: inline-block;
-            margin: 0 10px 10px;
+            margin: 0 12px 12px;
             padding: 12px 24px;
-            background: #3498db;
+            background: linear-gradient(135deg, #3498db, #2980b9);
             color: white;
             text-decoration: none;
-            border-radius: 10px;
+            border-radius: 12px;
             font-family: 'Pudelinka', cursive;
             font-size: 1.1em;
-            transition: background 0.2s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .crossword-btn:hover {
-            background: #2980b9;
+            background: linear-gradient(135deg, #2980b9, #3498db);
         }
 
         footer {
             margin-top: 30px;
             color: #7f8c8d;
             font-size: 0.95em;
+            text-align: center;
         }
     </style>
 </head>
@@ -144,7 +149,7 @@
     </div>
 
     <footer>
-        © 2025 | Создано с любовью для праздника 🎄
+        © 2025 | Создано с любовью для праздника 🎄❤️
     </footer>
 
     <script>
